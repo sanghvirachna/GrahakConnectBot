@@ -23,7 +23,7 @@ const Language = () => {
   return (
     <>
       {showComponents && (
-        <div className={`w-[95%] h-[90%] p-4 sm:p-0 sm:w-1/2 sm:h-[75%] md:w-[35%] lg:w-[33%] xl:w-[33%] 2xl:w-[27%] fixed right-5 bottom-15  sm:bottom-20 sm:right-10 rounded-3xl shadow-lg bg-gray`}>
+        <div className={`w-[95%] h-[90%] p-4 sm:p-0 sm:w-1/2 sm:h-[75%] md:w-[35%] lg:w-[33%] xl:w-[33%] 2xl:w-[25%] fixed right-5 bottom-15  sm:bottom-20 sm:right-10 rounded-3xl shadow-lg bg-gray`}>
           <Navbar text="Government E-marketplace" url="/"/>
           <ChooseLanguage />
         </div>
