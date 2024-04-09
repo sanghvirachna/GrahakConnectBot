@@ -32,10 +32,10 @@ const Chat = () => {
                 <p className='text-xs text-[#737376] ml-9 self-end font-inter'>2m ago<span className='mx-1'>·</span>Seen</p>
             </div>
             {/* input */}
-            <div className='mt-9 sm:mt-0 flex w-full items-center  px-3 absolute bottom-4'>
-                <div className='flex-grow w-[80%] flex items-center border-2 border-gray-300 rounded-3xl px-5 py-1 bg-white'>
+            <div className='mt-9 sm:mt-0 flex w-full items-center  px-3 absolute sm:bottom-4 bottom-2'>
+                <div className='flex-grow w-[80%] flex items-center border-2 border-gray-300 rounded-3xl sm:px-5 px-3 py-1 bg-white'>
                     <input type='text' className='flex-grow bg-transparent outline-none font-baloo2' placeholder='शुरू करें...' />
-                    <img src={Microphone} alt="Microphone" className='ml-2 h-[10%] w-[5%]' />
+                    <img src={Microphone} alt="Microphone" className='sm:ml-2  sm:h-[10%] sm:w-[5%] w-[8%] h-[10%]' />
                 </div>
                 <button className='ml-2 bg-[#D9352E] p-2 rounded-full'>
                     <img src={send} alt="Send" className='h-6 w-full' />
