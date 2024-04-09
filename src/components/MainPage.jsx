@@ -1,14 +1,20 @@
-import React from 'react';
+import React,{useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import hello from '../images/hello.svg';
 import namaste from '../images/namaste.svg';
-
+import {UserContext} from '../UserContext'
 const MainPage = () => {
   const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
 
-  const handleStartClick = () => {
+  const handleStartClick = async () => {
+    const response = await axios.get('https://api.ipify.org?format=json');
+    console.log(response.data.ip);
+    setUser({ ...user, ipAddress: response.data.ip });
     navigate('/language');
   };
+  
 
   return (
     <div className='w-full h-[90%] rounded-3xl flex flex-col items-center justify-center'>
