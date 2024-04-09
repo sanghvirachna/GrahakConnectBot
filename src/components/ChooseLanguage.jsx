@@ -9,7 +9,7 @@ const ChooseLanguage = () => {
   return (
     <div>
       
-      <h1 className='text-[#D9352E] text-xl font-bold text-center sm:p-3 lg:p-5  p-2 font-poppins'>Choose Language</h1>
+      <h1 className='text-[#D9352E] text-xl font-bold text-center sm:p-5 lg:p-5  p-5 font-poppins'>Choose Language</h1>
       <div className='grid grid-cols-2 gap-1 gap-x-10 mx-10 lg:mx-12 lg:py-5 py-2 text-[#D9352E] text-sm sm:gap-1 sm:gap-x-4 '>
         <div className='bg-[#F7D7D5] border-2 border-[#F10086] w-[130%] sm:w-[100%] h-[90%] py-1  flex flex-col items-center justify-center rounded-2xl font-lato'>
           <p className='font-bold'>Hindi</p>
