@@ -9,7 +9,7 @@ const Chat = () => {
             <div className='h-[80%] flex flex-col justify-between space-y-4 p-4 overflow-y-auto font-bold'>
                 <div className='flex items-end space-x-1 '>
                     <img src={botchatlogo} alt="Chatbot Logo" className='h-[60%] w-[9%]' />
-                    <div className='rounded-lg bg-[#EBEBEB] text-xs text-black p-2 w-4/5'>
+                    <div className='rounded-lg bg-[#EBEBEB] text-xs 2xl:text-sm text-black p-2 w-4/5'>
                         <p className='font-inter'>👋 गवर्नमेंट ई मार्केटप्लेस के ग्राहक कनेक्ट पोर्टल में आपका स्वागत है, अपनी समस्या चुनें।</p>
                     </div>
                 </div>
