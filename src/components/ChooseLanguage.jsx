@@ -15,16 +15,17 @@ const ChooseLanguage = () => {
     if (selectedLanguage) {
       console.log(selectedLanguage);
       setUser({ ...user, language: selectedLanguage });
-      console.log(user);
-      navigate('/chats');
     } else {
       alert("Please select a language.");
     }
   };
   useEffect(() => {
-    console.log(user);
-  }, [user]);
-  
+    if (user.language) {
+      navigate('/chats');
+      console.log(user);
+
+    }
+  }, [user.language, navigate]);
   return (
     <div>
       <h1 className='text-[#D9352E] text-xl font-bold text-center sm:p-5 lg:p-5  p-5 font-poppins'>Choose Language</h1>

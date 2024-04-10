@@ -1,20 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Microphone from '../images/Microphone.svg';
 import botchatlogo from '../images/botchatlogo.svg';
 import send from '../images/send.svg';
+import { UserContext } from '../UserContext';
+import { db } from '../firebase';
+import { collection, doc, setDoc, arrayUnion } from "firebase/firestore";
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const { user, setUser } = useContext(UserContext);
 
   const handleSendClick = () => {
     if (input) {
-      setMessages([...messages, { text: input, sender: 'user' }]);
+      const newMessage = { text: input, sender: 'user' };
+      setMessages([...messages, newMessage]);
       setInput('');
+  
+      setDoc(doc(collection(db, 'users'), user.ipAddress), {
+        userContext: user,
+        messages: arrayUnion(newMessage)
+      }, { merge: true })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
     }
   };
 
   return (
+    // Your chat component JSX
     <div className='w-full h-full'>
       <div className='w-[110%] h-[80%] flex flex-col justify-between space-y-4 p-4 overflow-y-auto font-bold'>
         {/* existing messages */}<div className='flex items-end space-x-1 '>
@@ -53,3 +70,6 @@ const Chat = () => {
 }
 
 export default Chat;
+
+
+
